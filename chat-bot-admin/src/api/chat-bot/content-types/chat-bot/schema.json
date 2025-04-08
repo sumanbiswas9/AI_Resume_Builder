@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_bots",
+  "info": {
+    "singularName": "chat-bot",
+    "pluralName": "chat-bots",
+    "displayName": "Chat-bot",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "chatContent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "chat-name.chat-name"
+    },
+    "chatId": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "chatName": {
+      "type": "string"
+    }
+  }
+}

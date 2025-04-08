@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_chat_name_chat_names",
+  "info": {
+    "displayName": "ChatName",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sender": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "timestamp": {
+      "type": "datetime"
+    },
+    "msgid": {
+      "type": "string"
+    }
+  }
+}
