@@ -31,11 +31,21 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
+        # Use the standard Jekyll Actions build step
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
+        env:
+          # Make secrets available as environment variables during build
+          VITE_CLERK_PUBLISHABLE_KEY: ${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}
+          VITE_STRAPI_API_KEY: ${{ secrets.VITE_STRAPI_API_KEY }}
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }} # Make sure this secret holds your PRODUCTION API URL
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Set JEKYLL_ENV to production for optimal build
+          JEKYLL_ENV: production
       - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
 
   # Deployment job
